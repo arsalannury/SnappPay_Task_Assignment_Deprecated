@@ -1,14 +1,14 @@
-import React from 'react'
-import SearchBox from '../../components/searchbox/SearchBox'
+import React from "react";
+import SearchBox from "../../components/searchbox/SearchBox";
 
 const HomePage = () => {
   return (
-      <>
-          <div className='w-6/12 m-auto bg-slate-500'>
-              <SearchBox />
-          </div>   
+    <>
+      <div className="md:w-8/12 w-full m-auto  p-3">
+        <SearchBox />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
