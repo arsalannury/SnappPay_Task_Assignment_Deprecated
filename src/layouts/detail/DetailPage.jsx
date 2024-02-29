@@ -28,7 +28,7 @@ const DetailPage = () => {
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return <Loading classN={"h-[100vh]"} />;
   }
 
   return (
