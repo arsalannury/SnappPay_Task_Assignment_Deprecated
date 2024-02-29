@@ -29,7 +29,11 @@ const SearchBox = () => {
           className="bg-gray-50 border text-left w-full border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5"
         />
       </div>
-      <button className="px-12 py-2 mt-5 bg-blue-950 text-white rounded-xl">
+      <button
+        className="px-12 py-2 mt-5 bg-blue-950 text-white rounded-xl 
+        transition-all hover:bg-white hover:text-blue-950 border
+       border-blue-950 hover:shadow-bottomSm active:shadow-bottomXs"
+      >
         search
       </button>
     </div>
