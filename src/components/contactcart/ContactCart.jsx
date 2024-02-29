@@ -5,7 +5,7 @@ const ContactCart = ({ avatar, name, phone, city, id }) => {
   return (
     <>
       <div className="flow-root border-b-2 py-5 transition-all hover:border-blue-900">
-        <Link to={`/detailPage/${id}`}>
+        <Link to={`/${id}`}>
           <ul
             role="list"
             className="divide-y divide-gray-200 dark:divide-gray-700"
@@ -14,6 +14,7 @@ const ContactCart = ({ avatar, name, phone, city, id }) => {
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <img
+                    loading="lazy"
                     className="w-8 h-8 rounded-full"
                     src={avatar}
                     alt="avatar image"

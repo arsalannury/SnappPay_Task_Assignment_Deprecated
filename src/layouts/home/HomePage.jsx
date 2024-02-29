@@ -53,7 +53,7 @@ const HomePage = () => {
       <div>
         <img
           src={Oops}
-          lazy={true}
+          loading={"lazy"}
           alt="oops image"
           className="w-[150px] m-auto"
         />
@@ -69,7 +69,8 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="md:w-8/12 w-full m-auto  p-3">
+      <div className="md:w-8/12 w-full m-auto p-3">
+        <p className="my-10 sm:text-left text-center">Search Contacts</p>
         <SearchBox />
         <p className="my-10 sm:text-left text-center">Last Visited Contacts</p>
         <div className="flex justify-around items-center sm:flex-row flex-col pb-10 border-b-2">
