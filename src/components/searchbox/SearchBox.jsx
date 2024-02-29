@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchBox = () => {
   return (
-    <div className="flex items-center justify-center flex-col">
+    <div className="flex items-center justify-center flex-col border-b-2 pb-10">
       <div className="md:w-4/12 w-full">
         <label
           for="contactnumber"
