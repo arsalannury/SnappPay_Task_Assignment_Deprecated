@@ -43,7 +43,7 @@ const DetailPage = () => {
             <p className="text-center mt-5">
               {contact.first_name} {contact.last_name}
             </p>
-            <p class="mt-4 text-center bg-blue-900 text-blue-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded m-auto">
+            <p className="mt-4 text-center bg-blue-900 text-blue-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded m-auto">
               createdAt: {new Date(contact.createdAt).toLocaleString()}
             </p>
           </div>

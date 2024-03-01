@@ -10,9 +10,38 @@ const HomePage = () => {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const getAllContacts = async () => {
+  const getContactByQuery = async (inputValue) => {
+    const regex = new RegExp(/[0-9]/);
+    const test = regex.test(inputValue);
     setLoading(true);
     try {
+      const fetchResultQuery = await BaseUrl.get(
+        `/passenger/?where={${
+          test ? '"phone"' : '"first_name"'
+        }:{"contains":"${inputValue}"}}&sort=createdAt DESC&limit=30`
+      );
+      setContacts(fetchResultQuery.data.items);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+    }
+  };
+
+  const debounceQuery = (mainFunction, delay) => {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        mainFunction(...args);
+      }, delay);
+    };
+  };
+
+  const debouncedSearchQuery = debounceQuery(getContactByQuery, 1500);
+
+  const getAllContacts = async () => {
+    try {
+      setLoading(true);
       const fetchResult = await BaseUrl.get("/passenger");
       setContacts(fetchResult.data.items);
       setLoading(false);
@@ -71,7 +100,7 @@ const HomePage = () => {
     <>
       <div className="md:w-8/12 w-full m-auto p-3">
         <p className="my-10 sm:text-left text-center">Search Contacts</p>
-        <SearchBox />
+        <SearchBox loading={loading} getContactByQuery={debouncedSearchQuery} />
         <p className="my-10 sm:text-left text-center">Last Visited Contacts</p>
         <div className="flex justify-around items-center sm:flex-row flex-col pb-10 border-b-2">
           {renderLastVisited()}
