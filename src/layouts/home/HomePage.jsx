@@ -83,6 +83,7 @@ const HomePage = () => {
     return (
       <div>
         <img
+          data-testid="oops-image-id"
           src={Oops}
           loading={"lazy"}
           alt="oops image"
@@ -107,7 +108,12 @@ const HomePage = () => {
         <div className="flex justify-around items-center sm:flex-row flex-col pb-10 border-b-2">
           {renderLastVisited()}
         </div>
-        <p className="my-10 sm:text-left text-center">Contacts</p>
+        <p
+          className="my-10 sm:text-left text-center"
+          data-testid="contacts-test-id"
+        >
+          Contacts
+        </p>
         <div>{renderContacts()}</div>
       </div>
     </>
