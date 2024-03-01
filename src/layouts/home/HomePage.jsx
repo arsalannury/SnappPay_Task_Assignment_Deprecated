@@ -64,6 +64,8 @@ const HomePage = () => {
           phone={contact.phone}
         />
       ));
+    } else {
+      return <p className="text-center my-20">There Are No Contacts</p>;
     }
   };
 
@@ -74,7 +76,7 @@ const HomePage = () => {
 
     if (lastVisitedList) {
       return lastVisitedList.map((visit) => (
-        <VisitedContacts name={visit.name} path={visit.id} />
+        <VisitedContacts key={visit.id} name={visit.name} path={visit.id} />
       ));
     }
 

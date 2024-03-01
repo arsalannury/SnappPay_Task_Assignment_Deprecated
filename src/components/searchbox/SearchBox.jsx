@@ -4,7 +4,7 @@ import SearchIcon from "../../icons/SearchIcon";
 const SearchBox = ({ getContactByQuery, loading }) => {
   return (
     <div className="flex items-center justify-center flex-col border-b-2 pb-10">
-      <div className="md:w-4/12 w-full relative">
+      <div className="lg:w-4/12 w-full relative">
         <label
           htmlFor="contactname"
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-4"

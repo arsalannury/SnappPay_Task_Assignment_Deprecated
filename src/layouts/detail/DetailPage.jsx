@@ -17,8 +17,40 @@ const DetailPage = () => {
       const fetchResult = await BaseUrl.get(`/passenger/${routerParams.id}`);
       setContact(fetchResult.data);
       setLoading(false);
+      checkStorageAndUpdate(fetchResult.data);
     } catch (error) {
       setLoading(false);
+    }
+  };
+
+  const checkStorageAndUpdate = (contactData) => {
+    if (localStorage.getItem("last_visited")) {
+      const lastVisitedList = JSON.parse(localStorage.getItem("last_visited"));
+
+      const findDuplicatedRecord = lastVisitedList.find(
+        (record) => record.id === Number(routerParams.id)
+      );
+
+      if (!findDuplicatedRecord) {
+        lastVisitedList.length >= 4 && lastVisitedList.shift();
+
+        lastVisitedList.push({
+          id: contactData.id,
+          name: `${contactData.first_name} ${contactData.last_name}`,
+        });
+
+        localStorage.setItem("last_visited", JSON.stringify(lastVisitedList));
+      }
+    } else {
+      const list = [];
+
+      list.push({
+        id: contactData.id,
+        name: `${contactData.first_name} ${contactData.last_name}`,
+      });
+
+      localStorage.setItem("last_visited", JSON.stringify(list));
+
     }
   };
 
