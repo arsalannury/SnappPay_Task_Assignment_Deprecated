@@ -74,7 +74,7 @@ const HomePage = () => {
 
     if (lastVisitedList) {
       return lastVisitedList.map((visit) => (
-        <VisitedContacts name={visit.name} path={visit.id} />
+        <VisitedContacts key={visit.id} name={visit.name} path={visit.id} />
       ));
     }
 
