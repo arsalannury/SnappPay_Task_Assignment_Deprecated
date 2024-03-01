@@ -64,6 +64,8 @@ const HomePage = () => {
           phone={contact.phone}
         />
       ));
+    } else {
+      return <p className="text-center my-20">There Are No Contacts</p>;
     }
   };
 

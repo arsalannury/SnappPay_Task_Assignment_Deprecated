@@ -5,7 +5,7 @@ const ContactCart = ({ avatar, name, phone, city, id }) => {
   return (
     <>
       <div className="flow-root border-b-2 py-5 transition-all hover:border-blue-900">
-        <Link to={`/${id}`}>
+        <Link to={`/detail/${id}`}>
           <ul
             role="list"
             className="divide-y divide-gray-200 dark:divide-gray-700"
