@@ -1,1 +1,1 @@
-<h1 style="text-align: center; width: 100%">SnappPay Assignment</h1>
+<h1 style="text-align: center;">SnappPay Assignment</h1>
