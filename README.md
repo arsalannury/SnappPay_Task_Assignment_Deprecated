@@ -13,6 +13,3 @@
   <li>run <code>npm start</code></li>
   <li>run <code>npm test</code> to run unit tests</li>
 </ol>
-
-<p> Also, you can run the npm test command to start unit tests </p>
-
