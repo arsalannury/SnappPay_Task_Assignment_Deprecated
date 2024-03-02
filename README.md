@@ -3,7 +3,7 @@
 <p>React Js application based on Webpack and Babel without <strong>CRA</strong> configuration</p>
 
 
-![Snapp Pay Logo!](/assets/images/download.png "logo")
+![Snapp Pay Logo!](src/assets/images/download.png "logo")
 
 
 <h3>To run this app you should follow this guide</h3>
