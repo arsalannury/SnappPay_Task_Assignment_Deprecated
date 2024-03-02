@@ -13,5 +13,5 @@
 
 <ol>
   <li>copy all folders to frontend directory</li>
-  <li>run `code npm install` to install packages</li>
+  <li>run <code>npm install</code> to install packages</li>
 </ol>
