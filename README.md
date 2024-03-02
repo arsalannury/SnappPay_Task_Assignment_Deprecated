@@ -1,11 +1,11 @@
 <h1 style="text-align: center;">SnappPay Assignment</h1>
 
-<p>React Js application based on Webpack and Babel without <strong>CRA</strong> configuration. a <strong>SPA</strong> app for snapp passengers to manage their contacts list</p> 
+<p>React Js application based on Webpack and Babel without <strong>CRA</strong> configuration. A <strong>SPA</strong> app for snapp passengers to manage their contacts list</p> 
 
 ![Snapp Pay Logo!](./src/assets/images/download.jpg "logo")
 
 -----------------
-<h3>To run this app you should follow this guide</h3>
+<h2>To run this app you should follow this guide</h2>
 
 <ol>
   <li>copy all folders to frontend directory</li>
@@ -13,5 +13,5 @@
   <li>run <code>npm start</code></li>
 </ol>
 
-<p>you can also run <code>npm test</code> command for start unit tests </p>
+<p> Also, you can run the npm test command to start unit tests </p>
 
