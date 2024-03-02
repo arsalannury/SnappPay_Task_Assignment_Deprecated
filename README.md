@@ -1,7 +1,6 @@
 <h1 style="text-align: center;">SnappPay Assignment</h1>
 
-<p>React Js application based on Webpack and Babel without <strong>CRA</strong> configuration</p>
-<p>a <strong>SPA</strong> app for snapp passengers to manage their contacts list</p>
+<p>React Js application based on Webpack and Babel without <strong>CRA</strong> configuration</p> . a <strong>SPA</strong> app for snapp passengers to manage their contacts list
 
 ![Snapp Pay Logo!](./src/assets/images/download.jpg "logo")
 
