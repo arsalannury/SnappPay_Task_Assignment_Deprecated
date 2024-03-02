@@ -8,7 +8,7 @@
 <h2>To run this app you should follow this guide</h2>
 
 <ol>
-  <li>start backend directory server</li>
+  <li>run <code>npm start</code> at the backend directory</li>
   <li>run <code>npm install</code></li>
   <li>run <code>npm start</code></li>
   <li>run <code>npm test</code> to run unit tests</li>
