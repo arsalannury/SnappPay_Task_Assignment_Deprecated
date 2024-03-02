@@ -13,6 +13,5 @@
   <li>run <code>npm start</code></li>
 </ol>
 
-------------------
-<p> This project was developed by React and Tailwind </p>
+<p>you can also run <code>npm test</code> command for start unit tests </p>
 
