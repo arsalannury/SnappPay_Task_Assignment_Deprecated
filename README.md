@@ -1,2 +1,1 @@
-# H1
-SnappPay Assignment
+# H1 SnappPay Assignment
