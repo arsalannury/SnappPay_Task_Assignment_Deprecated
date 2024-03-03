@@ -13,3 +13,18 @@
   <li>run <code>npm start</code></li>
   <li>run <code>npm test</code> to run unit tests</li>
 </ol>
+
+----------------
+
+<h3>Branches</h3>
+
+<p>the main branch which updated with latest changes is <strong>master</strong> branch</p>
+
+---------------
+
+<h4>Api Endpoints</h4>
+
+<p>The base url is <code>http://localhost:1337</code></p>
+<strong>GET -> /passenger</strong>
+<strong>GET -> /passenger/::passengerId</strong>
+<strong>GET -> /passenger/?where={"first_name":{"contains":"Jabez"}}&sort=createdAt DESC&limit=30</strong>
