@@ -5,6 +5,7 @@ import ContactCart from "../../components/contactcart/ContactCart";
 import { BaseUrl } from "../../baseUrl";
 import Loading from "../../components/loading/Loading";
 import Oops from "../../assets/images/oops.png";
+import { debounceQuery } from '../../shared/fns';
 
 const HomePage = () => {
   const [contacts, setContacts] = useState([]);
@@ -27,15 +28,6 @@ const HomePage = () => {
     }
   };
 
-  const debounceQuery = (mainFunction, delay) => {
-    let timer;
-    return function (...args) {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        mainFunction(...args);
-      }, delay);
-    };
-  };
 
   const debouncedSearchQuery = debounceQuery(getContactByQuery, 1500);
 
@@ -65,7 +57,7 @@ const HomePage = () => {
         />
       ));
     } else {
-      return <p className="text-center my-20">There Are No Contacts</p>;
+      return <p data-testid="thereAreNo" className="text-center my-20">There Are No Contacts</p>;
     }
   };
 
@@ -81,7 +73,7 @@ const HomePage = () => {
     }
 
     return (
-      <div>
+      <div data-testid="oops-wrapper">
         <img
           data-testid="oops-image-id"
           src={Oops}
