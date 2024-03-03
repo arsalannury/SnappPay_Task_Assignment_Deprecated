@@ -13,7 +13,7 @@ afterAll(() => server.close());
 
 describe("Home Page Functionality", () => {
 
-  test("-- should render static elements correctly", async () => {
+  test("-- should render static elements", async () => {
     render(
       <BrowserRouter>
         <HomePage />
@@ -94,9 +94,7 @@ describe("Home Page Functionality", () => {
       </BrowserRouter>
     );
 
-    const thereAreNoElement = await screen.findByText(
-      "Oops! The Last Visited List Is Empty"
-    );
+    const thereAreNoElement = await screen.findByText("There Are No Contacts");
 
     expect(thereAreNoElement).toBeInTheDocument();
 
