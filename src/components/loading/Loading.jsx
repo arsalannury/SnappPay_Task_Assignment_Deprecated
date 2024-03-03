@@ -4,6 +4,7 @@ const Loading = ({classN}) => {
   return (
     <>
       <div
+        data-testid="loadingStatus"
         role="status"
         className={`flex items-center justify-center ${classN}`}
       >

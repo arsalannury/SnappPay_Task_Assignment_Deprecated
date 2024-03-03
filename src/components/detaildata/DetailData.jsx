@@ -3,7 +3,7 @@ import React from "react";
 const DetailData = (props) => {
   return (
     <>
-      <div className="md:w-6/12 w-full m-auto">
+      <div data-testid={props.label} className="md:w-6/12 w-full m-auto">
         <label
           htmlFor={props.label}
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-4"
@@ -11,6 +11,7 @@ const DetailData = (props) => {
           {props.label}
         </label>
         <input
+          data-testid={`${props.label}Input`}
           disabled
           type="text"
           id={props.label}

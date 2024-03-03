@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ContactCart = ({ avatar, name, phone, city, id }) => {
   return (
     <>
-      <div className="flow-root border-b-2 py-5 transition-all hover:border-blue-900">
+      <div data-testid="contact-card-id" className="flow-root border-b-2 py-5 transition-all hover:border-blue-900">
         <Link to={`/detail/${id}`}>
           <ul
             role="list"
