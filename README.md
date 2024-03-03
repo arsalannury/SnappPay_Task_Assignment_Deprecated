@@ -26,5 +26,7 @@
 
 <p>The base url is <code>http://localhost:1337</code></p>
 <strong>GET -> /passenger</strong>
+<br />
 <strong>GET -> /passenger/::passengerId</strong>
+<br />
 <strong>GET -> /passenger/?where={"first_name":{"contains":"Jabez"}}&sort=createdAt DESC&limit=30</strong>
