@@ -6,7 +6,7 @@ import Loading from "../../components/loading/Loading";
 import Phone from "../../assets/images/phone.png";
 import Telegram from "../../assets/images/telegram.png";
 
-const DetailPage = () => {
+const DetailPage = (props) => {
   const routerParams = useParams();
   const [contact, setContact] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -14,7 +14,12 @@ const DetailPage = () => {
   const getContact = async () => {
     setLoading(true);
     try {
-      const fetchResult = await BaseUrl.get(`/passenger/${routerParams.id}`);
+      const fetchResult = await BaseUrl.get(
+        `/passenger/${
+          props.passIdFromTest ? props.passIdFromTest : routerParams.id
+        }`
+      );
+
       setContact(fetchResult.data);
       setLoading(false);
       checkStorageAndUpdate(fetchResult.data);
@@ -50,7 +55,6 @@ const DetailPage = () => {
       });
 
       localStorage.setItem("last_visited", JSON.stringify(list));
-
     }
   };
 
@@ -59,28 +63,34 @@ const DetailPage = () => {
     return () => setContact(null);
   }, []);
 
-  if (loading) {
-    return <Loading classN={"h-[100vh]"} />;
-  }
-
   return (
     <>
-      {contact && (
-        <div className="md:w-6/12 w-full m-auto p-3">
+      {contact ? (
+        <div
+          data-testid="contact-detail"
+          className="md:w-6/12 w-full m-auto p-3"
+        >
           <div className="border-b-2 pb-5">
             <img
+              data-testid="contactImage"
               src={contact.avatar}
               className="m-auto w-[200px] rounded-full border border-blue-950"
             />
-            <p className="text-center mt-5">
+            <p data-testid="contactName" className="text-center mt-5">
               {contact.first_name} {contact.last_name}
             </p>
-            <p className="mt-4 text-center bg-blue-900 text-blue-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded m-auto">
+            <p
+              data-testid="contactCreatedAt"
+              className="mt-4 text-center bg-blue-900 text-blue-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded m-auto"
+            >
               createdAt: {new Date(contact.createdAt).toLocaleString()}
             </p>
           </div>
           <div className="flex items-center justify-between mt-4">
-            <span className="flex items-center justify-center">
+            <span
+              data-testid="contactPhone"
+              className="flex items-center justify-center"
+            >
               <img
                 src={Phone}
                 loading="lazy"
@@ -89,7 +99,10 @@ const DetailPage = () => {
               />
               +{contact.phone}
             </span>
-            <span className="flex items-center justify-center">
+            <span
+              data-testid="contactTelegram"
+              className="flex items-center justify-center"
+            >
               <img
                 src={Telegram}
                 loading="lazy"
@@ -106,6 +119,8 @@ const DetailPage = () => {
             <DetailData value={contact.address} label={"Address"} />
           </div>
         </div>
+      ) : (
+        <Loading classN={"h-[100vh]"} />
       )}
     </>
   );
