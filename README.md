@@ -8,10 +8,10 @@
 <h2>To run this app you should follow this guide</h2>
 
 <ol>
-  <li>run server from <strong>backend folder</strong> in <strong>snapppay-assignment</strong> directory</li>
-  <li>run <code>npm install</code></li>
-  <li>run <code>npm start</code></li>
-  <li>run <code>npm test</code> to run unit tests</li>
+  <li>run <code>npm install</code> in both of root project and backend folder</li>
+  <li>run server from <strong>backend</strong> with <strong>npm start</strong> </li>
+  <li>run <code>npm start in root to start webpack dev serve</code></li>
+  <li>run <code>npm test in root </code> to run unit tests</li>
 </ol>
 
 ----------------
