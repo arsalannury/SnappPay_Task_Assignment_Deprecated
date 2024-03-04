@@ -8,7 +8,7 @@
 <h2>To run this app you should follow this guide</h2>
 
 <ol>
-  <li>run <code>npm install</code> in both of root project and backend folder</li>
+  <li>run <code>npm install</code> in root project and backend folder</li>
   <li>run server from <strong>backend</strong> with <strong>npm start</strong> </li>
   <li>run <code>npm start in root to start webpack dev serve</code></li>
   <li>run <code>npm test in root </code> to run unit tests</li>
